@@ -3,15 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        .card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        form p {
+            margin-bottom: 1rem;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 4px rgba(37,117,252,0.4);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2575fc;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1a5ed1;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 14px;
+        }
+
+        .text-center a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-    <p class="text-center">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
-
+    <div class="card">
+        <h2>Login</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+        <p class="text-center">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </div>
 </body>
 </html>
